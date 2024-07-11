@@ -1,0 +1,51 @@
+/* 1. Universal Selection */
+
+*{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+/* 2. ID selection */
+
+#fruits
+{
+    color: red;
+    border: 2px dotted green;
+}
+
+/* 3. Class ::selection */
+
+.a1
+{
+    color: green;
+    text-decoration: line-through;
+    font-weight: 800px;
+
+}
+
+/* 4. Element selection */
+
+p{
+    background-color: pink;
+
+}
+
+/* 5. Attribute ::selection */
+
+input[type="text"]
+{
+    background-color: orange;
+    color: red;
+}
+input[type="password"]
+{
+    background-color: green;
+    color: yellow;
+}
+[placeholder="Email"]
+{
+    background-color: pink;
+}
+
+
