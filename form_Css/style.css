@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* background-color: #f0ebf8; */
+
+}
+body
+{
+    background-color: #f0ebf8;
+}
+header
+{
+    padding: 10px 50px;
+    /* padding-right: 50px; */
+    font-size: 40px;
+    font-family: jokerman;
+    color: #f0ebf8;
+    justify-content: space-around;
+    background-color: rgb(103, 58, 183);
+}
+
+.Name
+{
+    padding: 10px;
+    
+    text-align: left;
+}
+.Name .heading_name
+{
+    font-size: 40px;
+    font-family: cursive;
+    padding-left: 30px;
+    padding-bottom: 0px;
+}
+.Namebox
+{
+    margin-left: 25px;
+    /* justify-co: space-between; */
+    /* gap: 100px; */
+    align-content: space-between;
+    text-align: center;
+    border: 2px;
+    gap: 100px;
+    /* border-radius: 50px; */
+}
+input{
+    text-align: center;
+    gap: 100px;
+    /* margin-left: 200px; */
+    /* margin-right: 50px; */
+    padding: 10px 60px;
+        border-radius: 10px;
+
+}
