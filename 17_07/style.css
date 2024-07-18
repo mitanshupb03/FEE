@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+/* <<<<<<< HEAD */
 body{
     
     background-color: indigo;
@@ -54,7 +54,8 @@ h1{
 .items{
     height: 50px;
     width: 50px;
-=======
+}
+/* ======= */
 body{
     
     background-color: indigo;
@@ -110,5 +111,5 @@ h1{
 .items{
     height: 50px;
     width: 50px;
->>>>>>> c0e54eb2fb99c86ac644a0afd08e8c0bd5522041
+/* >>>>>>> c0e54eb2fb99c86ac644a0afd08e8c0bd5522041 */
 }
