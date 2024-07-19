@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+/* <<<<<<< HEAD */
 section
 {
     border: 5px solid #ccc;
@@ -20,8 +20,8 @@ section h1
     {
         color: white;
     }
-    
-=======
+} 
+/* ======= */
 section
 {
     border: 5px solid #ccc;
@@ -43,6 +43,4 @@ section h1
     {
         color: white;
     }
-    
->>>>>>> 52c4087fc652ddb8a57ae0a2bc2024ec631d263f
-}
+}   
