@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Pizza Club</title>
+
+  <style>
+    .carousel-item img {
+      height: 40vh;
+      object-fit: cover;
+    }
+
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .pizzacart {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    @media (max-width: 992px) {
+      .pizzacart {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a href="#" class="navbar-brand" style="color: hsl(44, 75%, 48%); font-family: elephant;">PiZZaCluB</a>
+        <button class="navbar-toggler" type="button" style="background-color: hsl(44, 75%, 48%);" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a href="#" class="nav-link active" style="color: hsl(44, 75%, 48%);">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" style="color: hsl(44, 75%, 48%);">Orders</a></li>
+            <li class="nav-item"><a href="#" class="nav-link" style="color: hsl(44, 75%, 48%); font-size: 1.75rem;"><i class="fa fa-cart-shopping"></i><span class="badge bg-danger">4</span></a></li>
+          </ul>
+          <form class="d-flex ms-auto">
+            <input class="form-control" type="search" placeholder="Search">
+            <button class="btn btn-outline-light ms-2" type="submit">Search</button>
+          </form>
+          <button class="btn btn-outline-light ms-3" type="button"><i class="fa-solid fa-user"></i> Login</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="slider-3.png" class="d-block w-100" alt="Pizza Slide">
+        </div>
+        <div class="carousel-item">
+          <img src="slider-1.webp" class="d-block w-100" alt="Pizza Slide">
+        </div>
+        <div class="carousel-item">
+          <img src="slide-1.jpeg" class="d-block w-100" alt="Pizza Slide">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="container mt-5">
+      <div class="pizzacart">
+        <div class="card" style="width: 16rem;">
+          <img src="pizza-1.jpeg" class="card-img-top" alt="Fiery Sausage & Paprika">
+          <div class="card-body">
+            <h5 class="card-title">Fiery Sausage & Paprika</h5>
+            <p class="card-text">Spiciest non-veg pizza with spicy & herby chicken sausage and red paprika toppings on a new spicy peri peri sauce base.</p>
+            <h6>Price: 500/-</h6>
+            <h6>Medium Size</h6>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 16rem;">
+          <img src="pizza-2.jpg" class="card-img-top" alt="Margherita">
+          <div class="card-body">
+            <h5 class="card-title">Margherita</h5>
+            <p class="card-text">Classic delight with 100% real mozzarella cheese.</p>
+            <h6>Price: 500/-</h6>
+            <h6>Medium Size</h6>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 16rem;">
+          <img src="pizza-3.png" class="card-img-top" alt="FarmHouse">
+          <div class="card-body">
+            <h5 class="card-title">FarmHouse</h5>
+            <p class="card-text">Delightful combination of onion, capsicum, tomato & grilled mushroom.</p>
+            <h6>Price: 500/-</h6>
+            <h6>Medium Size</h6>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 16rem;">
+          <img src="pizza-4.jpg" class="card-img-top" alt="Peppy Panner">
+          <div class="card-body">
+            <h5 class="card-title">Peppy Panner</h5>
+            <p class="card-text">Flavorful trio of juicy paneer, crisp capsicum with spicy red paprika.</p>
+            <h6>Price: 500/-</h6>
+            <h6>Medium Size</h6>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzE2jz0I2CfqCjFnSbFw5p3i38r4cr1p9CTy+Uc0IF4g" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-jHqzEYHj4jB3+0tvLaS7t4h2XVc71/u9Vq2c6MhsFeXAeF05DJEJj3p5fG6hU1N9" crossorigin="anonymous"></script>
+</body>
+
+</html>

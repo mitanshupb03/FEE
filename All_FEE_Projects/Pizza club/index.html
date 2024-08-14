@@ -1,235 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Pizza Club</title>
-    <!-- <script src="https://kit.fontawesome.com/04c13e5bc8.js" crossorigin="anonymous"></script> -->
-    <style>
-        a:hover
-        {
-            text-decoration: underline;
-        }
-        button.btn:hover{
-            border: 1px solid hsl(44, 75%, 48%);
-            /* transition: 0.5s; */
-        }
-        *:focus {
-            outline: none !important;
-            box-shadow: none !important;
-        }
-       
-        .carousel-item {
-            height: 100%; /* Ensure it takes up the full height of the carousel */
-        }
-        .pizzacart {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px; /* Adjust as needed for spacing */
-            padding: 20px; 
-            width: 100%; /* Ensure it takes up the full width of the carousel item */
-        }
-        .column {
-            /* border: 1px solid #ccc; Optional: For visual representation */
-            /* padding: 20px; Adjust as needed */
-            text-align: center; /* Center text */
-            /* background-color: #f8f9fa; Background color for better visibility */
-        }
-p.card-text
-{
-    font-size: 0.85rem;
-}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <title>Pizza Club</title>
+  <!-- <script src="https://kit.fontawesome.com/04c13e5bc8.js" crossorigin="anonymous"></script> -->
+  <style>
+    *
+    {
+      margin: 0;padding: 0;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
 
-        input[type="search"] {
-    margin-left: 15vw;
+    button.btn:hover {
+      border: 1px solid hsl(44, 75%, 48%);
+      /* transition: 0.5s; */
+    }
+
+    *:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    .carousel-item {
+      height: 100%;
+      /* Ensure it takes up the full height of the carousel */
+    }
+
+    .pizzacart {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: auto;
+      padding: 20px 0;
+      /* width: 100%;  */
+    }
+
+    p.card-text {
+      font-size: 0.85rem;
+    }
+
+    input[type="search"] {
+      margin-left: 15vw;
+      width: 30vw;
+      color: hsl(44, 48%, 31%);
+
+    }
+
+    input[type="search"]:hover {
+      border: 3px solid hsl(44, 75%, 48%);
+      margin-left: 0vw;
+    }
+
+    @media (max-width: 1500px) {
+  input[type="search"] {
     width: 30vw;
-    color: hsl(44, 48%, 31%);
+    margin-left: 15vw;
+  }
+
+  
+}
+
+@media (max-width: 1015px) {
+  .pizzacart {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: auto;
+    padding: 20px 0;
+  }
+
+   .Fourth, .Eight, .Tweleve {
+    display: none !important; /* Hide Fourth card */
+  }
+}
+
+@media (max-width: 755px) {
+  .pizzacart {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: auto;
+    padding: 20px 0;
+  }
+
+   .Third,
+  .Fourth,.Seventh, .Eight, .Eleventh, .Tweleve {
+    display: none !important; /* Hide Third and Fourth cards */
+  }
+}
+@media (max-width: 480px) {
+  .pizzacart {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: auto;
+    padding: 20px 0;
+  }
+.Second,
+  .Third,
+  .Fourth, .Sixth, .Seventh, .Eight , .Tenth, .Eleventh, .Tweleve{
+    display: none !important; /* Hide Third and Fourth cards */
+  }
+  /* Hide the "second" element if the screen width is greater than 480px */
+
 
 }
-input[type="search"]:hover
-{
-    border: 3px solid hsl(44, 75%, 48%);
+/* Hide the "second" element if the screen width is greater than 480px */
+@media screen and (min-width: 481px) {
+  #second {
+    display: none;
+  }
 }
-        @media (max-width:1020px) {
-            input[type="search"]{
-                width: 30vw;
-                margin-left: 0vw;
-            }
-        }
-    </style>
+
+  </style>
 </head>
+
 <body>
-<header>
+  <header>
     <nav class="navbar navbar-expand-lg bg-dark h-15">
-<div class="container-fluid">
-    <!-- <img src="" alt=""> -->
-    <a href="" class="navbar-brand" style="color: hsl(44, 75%, 48%);font-family: elephant;text-decoration: none !important;">PiZZaCluB</a>
-    <button class="navbar-toggler " type="button" style="background-color: hsl(44, 75%, 48%);" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav" >
-        <ul class="navbar-nav">
+      <div class="container-fluid">
+        <!-- <img src="" alt=""> -->
+        <a href="" class="navbar-brand"
+          style="color: hsl(44, 75%, 48%);font-family: elephant;text-decoration: none !important;">PiZZaCluB</a>
+        <button class="navbar-toggler " type="button" style="background-color: hsl(44, 75%, 48%);"
+          data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
             <li class="breadcrumb-item">
-                <a href="#" class="nav-link active ms-4" style="color: hsl(44, 75%, 48%);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Home</a>
+              <a href="#" class="nav-link active ms-4"
+                style="color: hsl(44, 75%, 48%);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Home</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="#" class="nav-link ms-4" style="color: hsl(44, 75%, 48%);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Orders</a>
+              <a href="#" class="nav-link ms-4"
+                style="color: hsl(44, 75%, 48%);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Orders</a>
             </li>
             <li class="breadcrumb-item position-relative ">
-                <a href="#" class="nav-link ms-4" style="padding: 0;color: hsl(44, 75%, 48%);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 1.75rem;"><i class="fa fa-cart-shopping"></i>
-                    <span class="badge" style=" position: absolute;
+              <a href="#" class="nav-link ms-4"
+                style="padding: 0;color: hsl(44, 75%, 48%);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 1.75rem;"><i
+                  class="fa fa-cart-shopping"></i>
+                <span class="badge" style=" position: absolute;
                     top: 5px;
                     right: 0;
                     transform: translate(50%, -50%);
                     background-color: red; /* Customize the badge color */
                     color: white;
-                    font-size: 0.55rem;">4</span>      
-               </a>
+                    font-size: 0.55rem;">4</span>
+              </a>
             </li>
-        </ul>
-        <form class="d-flex form"role="search">
-            <input class="form-control"  type="search" placeholder="Search"   aria-label="Search">
+          </ul>
+          <form class="d-flex form" role="search">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
             <button class="btn" type="submit" style="margin-left: 1rem;color: hsl(44, 75%, 48%);">Search</button>
-        </form>
-        <button class="btn ms-auto me-4" type="submit" style="color: hsl(44, 75%, 48%);"><i class="fa-solid fa-user me-2"></i>login</button>
-    </div>
-</div>
-    </nav>
-</header>
-<main>
-    <div class="slider" style="margin: 10px 0;">
-        <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="/slider-3.png" class="d-block w-100" style="height: 40vh;" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/slide-1.jpeg" class="d-block w-100"  style="height: 40vh;" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/slider-1.webp" class="d-block w-100"  style="height: 40vh;" alt="...">
-              </div>
-            </div>
-            <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon-dark" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-              <span class="carousel-control-next-icon-primary" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-    </div>
-
-    <div class="pizza">
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="pizzacart">
-                        <div class="column">
-                            <div class="card" style="width: 18rem; height: 20rem;">
-                                <img src="/pizza-1.jpeg" class="card-img-top" style="height: 10rem;" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Fiery Sausage & Paprika</h5>
-                                  <p class="card-text">Spiciest non veg pizza with spicy & herby chicken sausage and red paprika toppings on a new spicy peri peri sauce base.</p>
-                                  <a href="#" class="btn btn-primary">Add to cart</a>
-                                </div>
-                              </div>
-                        </div>
-                        <div class="column"> 
-                            <div class="card" style="width: 18rem; height: 20rem;">
-                            <img src="/pizza-2.jpg" class="card-img-top" style="height: 9rem;" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Margherita</h5>
-                              <p class="card-text">Classic delight with 100% real mozzarella cheese</p>
-                              <a href="#" class="btn btn-primary">Add to cart</a>
-                            </div>
-                          </div></div>
-                        <div class="column"> 
-                            <div class="card" style="width: 18rem;">
-                            <img src="/pizza-1.jpeg" class="card-img-top" style="height: 27vh;" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Fiery Sausage & Paprika</h5>
-                              <p class="card-text">Spiciest non veg pizza with spicy & herby chicken sausage and red paprika toppings on a new spicy peri peri sauce base.</p>
-                              <a href="#" class="btn btn-primary">Add to cart</a>
-                            </div>
-                          </div></div>
-                        <div class="column"> 
-                            <div class="card" style="width: 18rem;">
-                            <img src="/pizza-1.jpeg" class="card-img-top" style="height: 27vh;" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Fiery Sausage & Paprika</h5>
-                              <p class="card-text">Spiciest non veg pizza with spicy & herby chicken sausage and red paprika toppings on a new spicy peri peri sauce base.</p>
-                              <a href="#" class="btn btn-primary">Add to cart</a>
-                            </div>
-                          </div></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="pizzacart">
-                        <div class="column">
-                            <div class="card" style="width: 18rem;">
-                            <img src="/pizza-1.jpeg" class="card-img-top" style="height: 27vh;" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Fiery Sausage & Paprika</h5>
-                              <p class="card-text">Spiciest non veg pizza with spicy & herby chicken sausage and red paprika toppings on a new spicy peri peri sauce base.</p>
-                              <a href="#" class="btn btn-primary">Add to cart</a>
-                            </div>
-                          </div></div>
-                        <div class="column">
-                            <div class="card" style="width: 18rem;">
-                            <img src="/pizza-1.jpeg" class="card-img-top" style="height: 27vh;" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Fiery Sausage & Paprika</h5>
-                              <p class="card-text">Spiciest non veg pizza with spicy & herby chicken sausage and red paprika toppings on a new spicy peri peri sauce base.</p>
-                              <a href="#" class="btn btn-primary">Add to cart</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="column"> <div class="card" style="width: 18rem;">
-                            <img src="/pizza-1.jpeg" class="card-img-top" style="height: 27vh;" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Fiery Sausage & Paprika</h5>
-                              <p class="card-text">Spiciest non veg pizza with spicy & herby chicken sausage and red paprika toppings on a new spicy peri peri sauce base.</p>
-                              <a href="#" class="btn btn-primary">Add to cart</a>
-                            </div>
-                          </div></div>
-                        <div class="column"> <div class="card" style="width: 18rem;">
-                            <img src="/pizza-1.jpeg" class="card-img-top" style="height: 27vh;" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">Fiery Sausage & Paprika</h5>
-                              <p class="card-text">Spiciest non veg pizza with spicy & herby chicken sausage and red paprika toppings on a new spicy peri peri sauce base.</p>
-                              <a href="#" class="btn btn-primary">Add to cart</a>
-                            </div>
-                          </div></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="pizzacart">
-                        <div class="column">9</div>
-                        <div class="column">10</div>
-                        <div class="column">11</div>
-                        <div class="column">12</div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" style=" color:white;" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" style="color: white; width: 3rem; height: 3rem; background: black; border-radius: 50%;  margin-left: -10vw;" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" style="color: white; width: 3rem; height: 3rem; background: black; border-radius: 50%;  margin-right: -10vw;" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+          </form>
+          <button class="btn ms-auto me-4" type="submit" style="color: hsl(44, 75%, 48%);"><i
+              class="fa-solid fa-user me-2"></i>login</button>
         </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="slider" style="margin: 10px 0;">
+      <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/All_FEE_Projects/Pizza club/slider-3.png" class="d-block w-100" style="height: 40vh;" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/All_FEE_Projects/Pizza club/slider-1.webp" class="d-block w-100" style="height: 40vh;" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/All_FEE_Projects/Pizza club/slide-1.jpeg" class="d-block w-100" style="height: 40vh;" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon-dark" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next " type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon-primary" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
-</main>
 
+    <div class="pizza" style="padding: 0; position: relative;">
+      <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+              <!-- First Carousel Item -->
+              <div class="carousel-item active">
+                  <div class="pizzacart">
+                      <!-- Pizza Card 1 -->
+                      <div class="card First" style="text-align: center; margin-left: 5rem; width: 16rem; height: 23rem;">
+                          <img src="/All_FEE_Projects/Pizza club/pizza-1.jpeg" class="card-img-top" style="height: 10rem;" alt="Fiery Sausage & Paprika">
+                          <div class="card-body">
+                              <h5 class="card-title">Fiery Sausage & Paprika</h5>
+                              <p class="card-text" style="font-size: 0.65rem;">Spiciest non-veg pizza with spicy & herby chicken sausage and red paprika toppings on a new spicy peri peri sauce base.</p>
+                              <h6>Price: 500/-</h6>
+                              <h6>Medium Size</h6>
+                              <a href="#" class="btn btn-primary">Add to cart</a>
+                          </div>
+                      </div>
+                      <!-- Pizza Card 2 -->
+                      <div class="card Second" style="text-align: center; margin-left: 1.85rem; width: 16rem; height: 23rem;">
+                          <img src="/All_FEE_Projects/Pizza club/pizza-2.jpg" class="card-img-top" style="height: 9.5rem;" alt="Margherita">
+                          <div class="card-body">
+                              <h5 class="card-title">Margherita</h5>
+                              <p class="card-text">Classic delight with 100% real mozzarella cheese.</p>
+                              <h6>Price: 500/-</h6>
+                              <h6>Medium Size</h6>
+                              <a href="#" class="btn btn-primary">Add to cart</a>
+                          </div>
+                      </div>
+                      <!-- Pizza Card 3 -->
+                      <div class="card Third" style="width: 16rem; height: 23rem;text-align: center; margin-left: 1rem;">
+                          <img src="/All_FEE_Projects/Pizza club/pizza-3.png" class="card-img-top" style="height: 9.8rem;" alt="FarmHouse">
+                          <div class="card-body">
+                              <h5 class="card-title">FarmHouse</h5>
+                              <p class="card-text" style="font-size: 0.75rem;">Delightful combination of onion, capsicum, tomato & grilled mushroom.</p>
+                              <h6>Price: 500/-</h6>
+                              <h6>Medium Size</h6>
+                              <a href="#" class="btn btn-primary">Add to cart</a>
+                          </div>
+                      </div>
+                      <!-- Pizza Card 4 -->
+                      <div class="card Fourth" style="width: 16rem; height: 23rem; text-align: center; margin-right: 5rem;">
+                          <img src="/All_FEE_Projects/Pizza club/pizza-4.jpg" class="card-img-top" style="height: 9.7rem;" alt="Peppy Panner">
+                          <div class="card-body">
+                              <h5 class="card-title">Peppy Panner</h5>
+                              <p class="card-text" style="font-size: 0.85rem;">Flavorful trio of juicy paneer, crisp capsicum with spicy red paprika.</p>
+                              <h6>Price: 500/-</h6>
+                              <h6>Medium Size</h6>
+                              <a href="#" class="btn btn-primary">Add to cart</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+
+              <!-- Second Carousel Item -->
+              <div class="carousel-item">
+                <div class="pizzacart">
+                  <!-- Pizza Card 1 -->
+                  <div class="card Fifth" style="text-align: center; margin-left: 5rem; width: 16rem; height: 23rem;">
+                      <img src="/All_FEE_Projects/Pizza club/pizza-5.jpg" class="card-img-top" style="height: 10rem;" alt="Fiery Sausage & Paprika">
+                      <div class="card-body">
+                          <h5 class="card-title">Veg Extravaganza</h5>
+                          <p class="card-text" style="font-size: 0.65rem;">Black olives, capsicum, onion, grilled mushroom, corn, tomato, jalapeno & extra cheese</p>
+                          <h6>Price: 500/-</h6>
+                          <h6>Medium Size</h6>
+                          <a href="#" class="btn btn-primary">Add to cart</a>
+                      </div>
+                  </div>
+                  <!-- Pizza Card 2 -->
+                  <div class="card Sixth" style="text-align: center; margin-left: 1.85rem; width: 16rem; height: 23rem;">
+                      <img src="/All_FEE_Projects/Pizza club/pizza-6.jpg" class="card-img-top" style="height: 10rem;" alt="Margherita">
+                      <div class="card-body">
+                          <h5 class="card-title">Veggie Paradise</h5>
+                          <p class="card-text" style="font-size: 0.65rem;">The awesome foursome! Golden corn, black olives, capsicum, red paprika</p>
+                          <h6>Price: 500/-</h6>
+                          <h6>Medium Size</h6>
+                          <a href="#" class="btn btn-primary">Add to cart</a>
+                      </div>
+                  </div>
+                  <!-- Pizza Card 3 -->
+                  <div class="card Seventh" style="width: 16rem; height: 23rem;text-align: center; margin-left: 1rem;">
+                      <img src="/All_FEE_Projects/Pizza club/pizza-7.jpg" class="card-img-top" style="height: 10rem;" alt="FarmHouse">
+                      <div class="card-body">
+                          <h5 class="card-title">Cheese n Corn</h5>
+                          <p class="card-text" style="font-size: 0.65rem;">A delectable combination of sweet & juicy golden corn</p>
+                          <h6>Price: 500/-</h6>
+                          <h6>Medium Size</h6>
+                          <a href="#" class="btn btn-primary">Add to cart</a>
+                      </div>
+                  </div>
+                  <!-- Pizza Card 4 -->
+                  <div class="card Eight" style="width: 16rem; height: 23rem; text-align: center; margin-right: 5rem;">
+                      <img src="/All_FEE_Projects/Pizza club/pizza-8.jpg" class="card-img-top" style="height: 10rem;" alt="Peppy Panner">
+                      <div class="card-body">
+                          <h5 class="card-title">Pepper Barbecue Chicken</h5>
+                          <p class="card-text" style="font-size: 0.65rem;">Pepper barbecue chicken for that extra zing</p>
+                          <h6>Price: 500/-</h6>
+                          <h6>Medium Size</h6>
+                          <a href="#" class="btn btn-primary">Add to cart</a>
+                      </div>
+                  </div>
+              </div>
+              </div>
+              <!-- Third Carousel Item -->
+              <div class="carousel-item">
+                <div class="pizzacart">
+                  <!-- Pizza Card 1 -->
+                  <div class="card Ninth" style="text-align: center; margin-left: 5rem; width: 16rem; height: 23rem;">
+                      <img src="/All_FEE_Projects/Pizza club/pizza-9.jpg" class="card-img-top" style="height: 10rem;" alt="Fiery Sausage & Paprika">
+                      <div class="card-body">
+                          <h5 class="card-title">Cheese Volcano Peppy Paneer</h5>
+                          <p class="card-text" style="font-size: 0.65rem;">Centre loaded with Molten Cheese & topped with peppy Paneer, Capsicum & Red Papri...</p>
+                          <h6>Price: 500/-</h6>
+                          <h6>Medium Size</h6>
+                          <a href="#" class="btn btn-primary">Add to cart</a>
+                      </div>
+                  </div>
+                  <!-- Pizza Card 2 -->
+                  <div class="card Tenth" style="text-align: center; margin-left: 1.85rem; width: 16rem; height: 23rem;">
+                      <img src="/All_FEE_Projects/Pizza club/pizza-10.jpg" class="card-img-top" style="height: 10rem;" alt="Margherita">
+                      <div class="card-body">
+                          <h5 class="card-title">Cheese Volcano Farmhouse</h5>
+                          <p class="card-text" style="font-size: 0.65rem;">Centre loaded with Molten Cheese & topped with Onion, Capsicum, Tomato & Grilled</p>
+                          <h6>Price: 500/-</h6>
+                          <h6>Medium Size</h6>
+                          <a href="#" class="btn btn-primary">Add to cart</a>
+                      </div>
+                  </div>
+                  <!-- Pizza Card 3 -->
+                  <div class="card Eleventh" style="width: 16rem; height: 23rem;text-align: center; margin-left: 1rem;">
+                      <img src="/All_FEE_Projects/Pizza club/pizza-11.jpg" class="card-img-top" style="height: 10rem;" alt="FarmHouse">
+                      <div class="card-body">
+                          <h5 class="card-title">Cheese Volcano Veg Paradise</h5>
+                          <p class="card-text" style="font-size: 0.65rem;">Centre loaded with Molten Cheese & topped with Golden Corn, Black Olives, Capsicum </p>
+                          <h6>Price: 500/-</h6>
+                          <h6>Medium Size</h6>
+                          <a href="#" class="btn btn-primary">Add to cart</a>
+                      </div>
+                  </div>
+                  <!-- Pizza Card 4 -->
+                  <div class="card Tweleve" style="width: 16rem; height: 23rem; text-align: center; margin-right: 5rem;">
+                      <img src="/All_FEE_Projects/Pizza club/pizza-12.jpg" class="card-img-top" style="height: 10rem;" alt="Peppy Panner">
+                      <div class="card-body">
+                          <h5 class="card-title">Cheese Volcano BBQ Chicken</h5>
+                          <p class="card-text" style="font-size: 0.65rem;">Centre loaded with Molten Cheese & topped with Pepper BBQ Chicken</p>
+                          <h6>Price: 500/-</h6>
+                          <h6>Medium Size</h6>
+                          <a href="#" class="btn btn-primary">Add to cart</a>
+                      </div>
+                  </div>
+              </div>
+              </div>
+          <!-- Carousel Controls -->
+          <button class="carousel-control-prev bg-dark" style="color: hsl(44, 75%, 48%); position: absolute; top: 50%; transform: translateY(-50%); left: 0.7rem; font-size: 0.85rem; width: 3.5rem; height: 3.55rem; border: none; border-radius: 50%;" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <i class="fa fa-arrow-left"></i>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next bg-dark" style="color: hsl(44, 75%, 48%); position: absolute; top: 50%; transform: translateY(-50%); right: 0.7rem; font-size: 0.85rem; width: 3.5rem; height: 3.5rem; border: none; border-radius: 50%;" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <i class="fa fa-arrow-right"></i>
+              <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+  </div>
+  
+  </main>
 
 
 
@@ -299,8 +428,14 @@ input[type="search"]:hover
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-</body>  
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
 </body>
+</body>
+
 </html>
